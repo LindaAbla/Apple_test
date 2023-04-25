@@ -12,7 +12,7 @@ app = Flask(__name__)
 def about():
     return "HELLO and WELCOME"
 
-@app.route("/login")
+@app.route("/")
 def generate_secret_key():
     f="https://apple-sign-bucket.s3.fr-par.scw.cloud/AuthKey_WR7AQBJ53M.p8"
     private_key = requests.get(f).content
