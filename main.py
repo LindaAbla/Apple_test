@@ -14,12 +14,12 @@ def about():
 
 @app.route("/login")
 def generate_secret_key():
-    with open(os.environ.get('SOCIAL_AUTH_APPLE_PRIVATE_KEY'), "r") as f:
-        private_key = f.read()
+    f="https://apple-sign-bucket.s3.fr-par.scw.cloud/AuthKey_WR7AQBJ53M.p8"
+    private_key = requests.get(f).content
 
-    team_id = os.environ.get('SOCIAL_AUTH_APPLE_TEAM_ID')
-    client_id = os.environ.get('SOCIAL_AUTH_APPLE_CLIENT_ID')
-    key_id = os.environ.get('SOCIAL_AUTH_APPLE_KEY_ID')
+    team_id = 'GDY52HN4HA'
+    client_id = 'com.abla.captcha'
+    key_id = 'WR7AQBJ53M'
 
     timestamp_now = datetime.datetime.now().timestamp()
     timestamp_exp = timestamp_now + (86400 * 180) # 6 months
