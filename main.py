@@ -37,7 +37,7 @@ def generate_secret_key():
 
     auth_request = {
         "client_id": "com.abla.captcha",
-        "redirect_uri": "https://captcha-apple.vercel.app/about",
+        "redirect_uri": "https://apple-sign.vercel.app/about",
         "response_type": "code",
         "scope": "name email",
         "state": "12345",
